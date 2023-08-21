@@ -46,7 +46,7 @@ public class BookStoreeMenuContributor : IMenuContributor
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 2);
         administration.SetSubItemOrder(SettingManagementMenus.GroupName, 3);
 
-        //codigo do tutorial 
+        // ---------------- codigo do tutorial  -----------------------
         context.Menu.AddItem(
              new ApplicationMenuItem(
                 "BooksStore",
@@ -56,10 +56,33 @@ public class BookStoreeMenuContributor : IMenuContributor
             new ApplicationMenuItem(
                 "BooksStore.Books",
                  l["Menu:Books"],
-                 url: "/books"
+                 url: "/books",
+                 icon: "fa fa-book-open"
                 )
-            )
+            ).AddItem(
+                new ApplicationMenuItem(
+                    "Bookstore.Autors",
+                    l["Autors"],
+                    url: "/autors",
+                    icon: "fa fa-pen"
+                    )
+             )   
         );
+        //------------------------------------------------------------
+
+        //context.Menu.AddItem(
+        //    new ApplicationMenuItem(
+        //        "Autors",
+        //        l["Menu:Autors"],
+        //        icon: "fal fa-pen-line"
+        //    ).AddItem(
+        //        new ApplicationMenuItem(
+        //            "Bookstore.Autors",
+        //            l["Menu: Autors"], 
+        //            url: "/autors"
+        //            )
+        //        )
+        //    );
         
         return Task.CompletedTask;
 

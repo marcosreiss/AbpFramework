@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-
+using System.ComponentModel.DataAnnotations;
+    
 namespace Acme.BookStoree.Autors
 {
     /*
@@ -13,7 +14,8 @@ namespace Acme.BookStoree.Autors
     to define validations for the properties. DTOs are automatically 
     validated by the ABP framework.
 
-        RESPONDER A PERGUNTA: O QUE FAZ UMA CLASSE CreateUpdateEntityDto
+        RESPONDER A PERGUNTA: O QUE FAZ UMA CLASSE CreateUpdateEntityDto?
+        REsposta: Responsável por pegar informações da interface de usuário para ser transferida pelo Dto
      */
     public class CreateUpdateAutorDto
     {
@@ -22,6 +24,7 @@ namespace Acme.BookStoree.Autors
         public string Nome { get; set; }
 
         [Required]
+        [EmailAddress(ErrorMessage = "Endereço de email inválido.")]
         public string Email { get; set; }
     }
-}
+}   

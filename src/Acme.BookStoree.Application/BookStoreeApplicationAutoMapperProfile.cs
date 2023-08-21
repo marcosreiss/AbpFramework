@@ -1,5 +1,5 @@
 ﻿using Acme.BookStore.Books;
-using Acme.BookStoree.Books;
+using Acme.BookStoree.Autors;
 using AutoMapper;
 
 namespace Acme.BookStoree;
@@ -17,6 +17,7 @@ public class BookStoreeApplicationAutoMapperProfile : Profile
         // mapeamento da entidade Autor
 
         CreateMap<Autor, AutorDto>();
+        CreateMap<Autor, CreateUpdateAutorDto>();
 
     }
 }
